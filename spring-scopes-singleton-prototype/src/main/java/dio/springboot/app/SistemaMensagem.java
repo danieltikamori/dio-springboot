@@ -9,11 +9,11 @@ public class SistemaMensagem {
     private Remetente noreply;
     @Autowired
     private Remetente techTeam;
-   public void enviarConfirmacaoCadastro(){
+   public void enviarConfirmacaoCadastro(){ // Singleton. To make sure each object have its own scope, we need to add @Scope("prototype") annotation to the Bean / BeanFactory.
        System.out.println(noreply);
        System.out.println("Seu cadastro foi aprovado");
    }
-    public void enviarMensagemBoasVindas(){
+    public void enviarMensagemBoasVindas(){ // Singleton
         techTeam.setEmail("tech@dio.com.br");
         System.out.println(techTeam);
         System.out.println("Bem-vindo à Tech Elite");
