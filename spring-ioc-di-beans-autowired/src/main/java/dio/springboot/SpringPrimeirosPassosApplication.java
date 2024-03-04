@@ -14,7 +14,7 @@ public class SpringPrimeirosPassosApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringPrimeirosPassosApplication.class, args);
 	}
-	@Bean
+	@Bean // A bean is not an implementation, interface or a class of the application.
 	public CommandLineRunner run(ConversorJson conversor) throws Exception {
 		return args -> {
 			String json = "{\"cep\": \"01001-000\",\"logradouro\": \"Praça da Sé\",\"localidade\": \"São Paulo\"}";
