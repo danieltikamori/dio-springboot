@@ -12,3 +12,6 @@ public class SpringPrimeirosPassosApplication {
 	
 
 }
+
+// application.properties centralizes the application properties, as attributes.
+// @Value enables the application properties and also default values if you will.

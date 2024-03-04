@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SistemaMensagem implements CommandLineRunner {
-	@Value("${name:NoReply-DIO}")
+	@Value("${name:NoReply-DIO}") // @Value enables application.properties and default values if a variable is not found. In this case, there´s no "name" property and so will use the default value defined.
 	private String nome;
 	@Value("${email}")
 	private String email;
