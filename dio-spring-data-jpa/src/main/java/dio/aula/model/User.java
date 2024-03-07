@@ -2,20 +2,21 @@ package dio.aula.model;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "tab_user")
+@Entity // JPA entity must be used.
+@Table(name = "tab_user") // Explicit table name, necessary as errors may happen without explicit naming (corrects error messages)
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id")
+    @Id // In order to be a Entity, Id attibute must be created and unique
+    @GeneratedValue(strategy = GenerationType.IDENTITY) // Automatically generated, unique, with respective strategy
+    @Column(name = "user_id") // In the table name, it will be different from id
     private Integer id;
-    @Column(length = 50, nullable = false)
+    @Column(length = 50, nullable = false) // Define max length of 50 characters and cannot be null.
     private String name;
-    @Column(length = 20, nullable = false)
+    @Column(length = 20, nullable = false) // Define max length of 20 characters and cannot be null.
     private String username;
-    @Column(length = 100, nullable = false)
+    @Column(length = 100, nullable = false) // Define max length of 100 characters and cannot be null.
     private String password;
 
+    // Create getters and setters and create repository package with UserRepository interface.
     public String getName() {
         return name;
     }
@@ -40,7 +41,7 @@ public class User {
         this.password = password;
     }
 
-    @Override
+    @Override // To be able to show the users list
     public String toString() {
         return "User{" +
                 "id=" + id +

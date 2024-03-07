@@ -8,9 +8,9 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 
-@Component
+@Component // Managed object of the Spring framework. Inversion of Control and injection of dependencies
 public class StartApp implements CommandLineRunner {
-    @Autowired
+    @Autowired // Injects dependencies. UserRepository
     private UserRepository repository;
     @Override
     public void run(String... args) throws Exception {
@@ -24,9 +24,9 @@ public class StartApp implements CommandLineRunner {
         user.setName("GABRIEL NUNES");
         user.setUsername("gabriel");
         user.setPassword("santos");
-        repository.save(user);
+        repository.save(user); // save the user in the repository
 
-        for(User u: repository.findAll()){
+        for(User u: repository.findAll()){ // list all users. Must use toString() at User class.
             System.out.println(u);
         }
     }
